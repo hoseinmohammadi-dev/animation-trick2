@@ -1,0 +1,113 @@
+:root{
+    --c-text:rgb(255, 255, 255);
+    --c-sec:rgb(214, 222, 236);
+    --c-pr:rgb(137, 222, 255);
+
+}
+
+
+/* info hosein */
+
+.hosein {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    border-radius: 50%;
+    z-index: 999;
+
+    .circle {
+        width: 180px;
+        height: 180px;
+
+        &::before,
+        &::after {
+            content: '';
+            width: 175px;
+            height: 175px;
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            transition: 1s;
+            rotate: 10deg;
+        }
+
+        &::before {
+            background-color: var(--c-pr);
+            border-radius: 30% 70% 35% 65% / 30% 36% 64% 70%;
+            z-index: -998;
+        }
+
+        &::after {
+            background-color: var(--c-sec);
+            border-radius: 64% 36% 61% 39% / 43% 36% 64% 57%;
+            z-index: -999;
+        }
+
+        >img {
+            width: 165px;
+            height: 165px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: bottom;
+        }
+
+    }
+
+    &:hover {
+        >a {
+            >i {
+                visibility: visible;
+            }
+        }
+
+        .circle {
+
+            &::before,
+            &::after {
+                rotate: 45deg;
+            }
+        }
+    }
+
+    >a {
+        >i {
+            font-size: 28px;
+            color: var(--c-sec);
+            transition: .6s;
+            position: absolute;
+            visibility: hidden;
+
+            &:hover {
+                color: var(--c-pr);
+            }
+        }
+
+        &:nth-of-type(1) {
+            >i {
+                top: -5px;
+                left: -30px;
+            }
+        }
+
+        &:nth-of-type(2) {
+            >i {
+                top: 35px;
+                left: -52px;
+            }
+        }
+
+        &:nth-of-type(3) {
+            >i {
+                top: 85px;
+                left: -52px;
+            }
+        }
+
+        &:nth-of-type(4) {
+            >i {
+                top: 125px;
+                left: -30px;
+            }
+        }
+    }
+}
